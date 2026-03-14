@@ -1,28 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+
+body{
+background-image:url("https://images.pexels.com/photos/29074927/pexels-photo-29074927.jpeg");
+background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+#contact{
+padding:80px 60px;
+text-align:center;
+}
+
+form{
+max-width:400px;
+margin:auto;
+background:rgba(0,0,0,0.5);
+padding:30px;
+border-radius:10px;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+background:darkgray;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+cursor:pointer;
+border-radius:7px;
+font-size:16px;
+}
+
+button:hover{
+background:black;
+}
+
+</style>
+
 </head>
-<body style="background-image: url(https://images.pexels.com/photos/29074927/pexels-photo-29074927.jpeg?cs=srgb&dl=pexels-harveyvillarino-29074927.jpg&fm=jpg); background-repeat:no-repeat;background-size: cover;background-position:fixed ;background-attachment: fixed;">
-    <section id="contact" style="padding:80px 60px; text-align:center;">
-    <h2 style="color:antiquewhite">Contact Us</h2>
-<b><p style="margin-top:20px; color:black; border-radius: 20px;">📍 Hyderabad | 📞 9876543210</p></b>
-    <form style="max-width:400px; margin:auto;">
-        <input type="text" placeholder="Your Name" required
-        style="width:100%; padding:12px; margin:10px 0; border-radius:5px; border:1px solid #ccc;">
 
-        <input type="email" placeholder="Your Email" required
-        style="width:100%; padding:12px; margin:10px 0; border-radius:5px; border:1px solid #ccc;">
+<body>
 
-        <textarea placeholder="Message" rows="4"
-        style="width:100%; padding:12px; margin:10px 0; border-radius:5px; border:1px solid #ccc;"></textarea>
+<section id="contact">
 
-        <input type="submit" value="SEND MESSAGE"
-        style="background:darkgray; color:white; padding:12px; border:none; width:100%; cursor:pointer; margin-left: 13px;border-radius: 7px;">
-    </form>
+<h2 style="color:antiquewhite;">Contact Us</h2>
 
-    
+<b>
+<p style="margin-top:20px; color:black;">📍 Hyderabad | 📞 9876543210</p>
+</b>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<textarea id="message" placeholder="Message" rows="4"></textarea>
+
+<button type="submit">SEND MESSAGE</button>
+
+</form>
+
+</section>
+
+<script>
+
+/* Form Validation */
+
+function validateForm(){
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
+
+if(name === "" || email === "" || message === ""){
+alert("Please fill all fields!");
+return false;
+}
+
+alert("✅ Thank you " + name + "! Your message has been sent.");
+
+return true;
+
+}
+
+</script>
+
 </body>
 </html>
