@@ -8,44 +8,51 @@
 <style>
 
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("https://images.pexels.com/photos/29074927/pexels-photo-29074927.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background-image: url("https://images.pexels.com/photos/29074927/pexels-photo-29074927.jpeg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 }
 
 /* Services Section */
 
 #services{
-    color: whitesmoke;
-    padding: 50px 30px;
-    text-align: center;
-    margin-top: 120px;
+color: whitesmoke;
+padding: 50px 30px;
+text-align: center;
+margin-top: 120px;
 }
 
 .services-container{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
+display: flex;
+justify-content: center;
+gap: 50px;
+flex-wrap: wrap;
 }
 
 .service-box{
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
+background: rgba(0,0,0,0.5);
+padding: 20px;
+border-radius: 10px;
+width: 200px;
+cursor: pointer;
+transition: transform 0.3s, background 0.3s;
+}
+
+.service-box:hover{
+transform: scale(1.1);
+background: rgba(0,0,0,0.8);
 }
 
 footer{
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 300px;
+background: #111;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 300px;
 }
 
 </style>
@@ -61,17 +68,17 @@ footer{
 
 <div class="services-container">
 
-<div class="service-box">
+<div class="service-box" onclick="serviceClick('Easy Finance')">
 <h3>💳 Easy Finance</h3>
 <p>Flexible EMI options available.</p>
 </div>
 
-<div class="service-box">
+<div class="service-box" onclick="serviceClick('Service Support')">
 <h3>🛠 Service Support</h3>
 <p>Authorized service & maintenance.</p>
 </div>
 
-<div class="service-box">
+<div class="service-box" onclick="serviceClick('Exchange Offers')">
 <h3>🔄 Exchange Offers</h3>
 <p>Best price for your old bike.</p>
 </div>
@@ -81,8 +88,22 @@ footer{
 </section>
 
 <footer>
-<p>© 2026 Elite Motors Showroom | All Rights Reserved</p>
+<p>© <span id="year"></span> Elite Motors Showroom | All Rights Reserved</p>
 </footer>
+
+<script>
+
+/* Service Click Alert */
+
+function serviceClick(service){
+alert("You selected: " + service + "\nOur team will assist you soon!");
+}
+
+/* Auto Update Year */
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
